@@ -7,13 +7,20 @@ jobs:
       - image: cimg/node:14.17.1
     steps:
       - checkout
-      - run: echo "this is the build job"
+      - run:
+          name: install dependencies
+          command: "npm install"
+      - run:
+          name: run build
+          command: "npm run build"
   test:
     docker:
       - image: cimg/node:14.17.1
     steps:
       - checkout
-      - run: echo "this is the test job"
+      - run:
+          name: run tests
+          command: "npm run test"
 
 # Orchestrate our job run sequence
 workflows:
