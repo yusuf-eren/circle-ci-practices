@@ -8,9 +8,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: install dependencies
-          command: "npm install"
-      - run:
           name: run build
           command: "npm run build"
   test:
